@@ -1,0 +1,20 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}
+    {{ thing.first_name }} - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+
+<h1>Welcome, {{ thing.first_name }}&nbsp;{{ thing.last_name }}</h1>
+<h4>Your Details Page</h4><hr>
+<h5>First Name:&nbsp;{{ thing.first_name }} </h5>
+<h5>Last Name:&nbsp;{{ thing.last_name }} </h5>
+<h5>PAN:&nbsp;{{ thing.pan }} </h5>
+<h5>Email ID:&nbsp;{{ user.email }} </h5>
+<h5>Date Of Birth:&nbsp;{{ thing.dob }} </h5>
+<h5>Phone Number:&nbsp;{{ thing.phone }} </h5>
+
+<a href="{% url 'edit_thing' slug=thing.slug %}">Edit me!</a>
+
+{% endblock %}

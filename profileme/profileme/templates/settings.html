@@ -1,0 +1,23 @@
+{% extends 'layouts/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Settings - {{ block.super }}{% endblock %}
+{% block content %}
+
+        <h1> Setting Page </h1>
+        <p>
+
+                    {% for thing in things %}
+                      {% if user == thing.user %}
+
+                            <a href="{% url 'thing_detail' slug=user.thing.slug %}">
+                              Profile
+                            </a>
+
+                      {% endif %}
+                    {% endfor %}
+
+        </p>
+
+{% endblock %}
